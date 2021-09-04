@@ -15,8 +15,8 @@ config = {
 firebase = pyrebase.initialize_app(config)
 
 db = firebase.database()
-# db.child("names").push({"name":"kota"})
-# db.child("names").push({"name":"take"})
+db.child("names").push({"name":"kota"})
+db.child("names").push({"name":"take"})
 
 app = Flask(__name__)
 
