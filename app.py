@@ -2,12 +2,13 @@ import pyrebase
 from flask import *
  
 config = {
-    apiKey: "AIzaSyD1zCgL2wBkrHXOsVAo7ao4UsmJ5HA-3Y8",
-    authDomain: "test-flask-database.firebaseapp.com",
-    projectId: "test-flask-database",
-    storageBucket: "test-flask-database.appspot.com",
-    messagingSenderId: "708005631553",
-    appId: "1:708005631553:web:22cc023dbd1d316f7798c0"
+    "apiKey": "AIzaSyD1zCgL2wBkrHXOsVAo7ao4UsmJ5HA-3Y8",
+    "authDomain": "test-flask-database.firebaseapp.com",
+    "databaseURL": "https://test-flask-database.firebaseio.com",
+    "projectId": "test-flask-database",
+    "storageBucket": "test-flask-database.appspot.com",
+    "messagingSenderId": "708005631553",
+    "appId": "1:708005631553:web:22cc023dbd1d316f7798c0"
 }
 
 
@@ -16,6 +17,8 @@ firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 # db.child("names").push({"name":"kota"})
 # db.child("names").push({"name":"take"})
+
+app = Flask(__name__)
 
 # ルートを指定、メソッドはGET、POST
 @app.route('/', methods=['GET', 'POST'])
